@@ -1,0 +1,30 @@
+{
+  "morute": [
+    {
+      "name": "Cursed Doll Collection",
+      "url": "https://example1.com",
+      "description": "Vintage dolls meet dark fairy tales",
+      "approved": true
+    },
+    {
+      "name": "Bleeding Hearts Blog",
+      "url": "https://example2.com",
+      "description": "Poetry and pastel gore",
+      "approved": true
+    }
+  ],
+  "traumacore": [
+    {
+      "name": "Soft Scars Archive",
+      "url": "https://example3.com",
+      "description": "Processing childhood through art",
+      "approved": true
+    },
+    {
+      "name": "Broken Sprinkles",
+      "url": "https://example4.com",
+      "description": "Pastel colors, heavy feelings",
+      "approved": true
+    }
+  ]
+}

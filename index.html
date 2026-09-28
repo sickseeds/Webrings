@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aesthetic Webring Hub</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <canvas id="rainCanvas"></canvas>
+    <!-- Navigation Tabs -->
+    <nav class="main-nav">
+      <ul class="tab-list">
+        <li><a href="index.html" class="tab active">Home</a></li>
+        <li><a href="morute.html" class="tab">Morute Webring</a></li>
+        <li><a href="traumacore.html" class="tab">Traumacore Webring</a></li>
+        <li><a href="#join" class="tab">Join</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Morbid Survivors</h1>
+        <p>A shared space for Morute & Traumacore communities to connect.</p>
+      </section>
+
+      <!-- Badge Showcase -->
+      <section class="badge-showcase">
+        <div class="badge-card">
+          <h2>Morute</h2>
+          <img src="badges/button1.gif" />
+          <img src="badges/button2.gif" />
+          <details class="code-toggle">
+            <summary>copy code here</summary>
+            <pre><code id="morute-code">&lt;a href="https://yourdomain.com/morute.html"&gt;
+  &lt;img src="https://yourdomain.com/badges/button1.gif"
+       alt="Morute Webring Member"&gt;
+&lt;/a&gt;</code></pre>
+          </details>
+        </div>
+        <div class="badge-card">
+          <h2>Traumacore</h2>
+          <img src="badges/button3.gif" />
+          <img src="badges/button4.gif" />
+          <details class="code-toggle">
+            <summary>copy code here</summary>
+            <pre><code id="traumacore-code">&lt;a href="https://yourdomain.com/traumacore.html"&gt;
+  &lt;img src="https://yourdomain.com/badges/button3.gif"
+       alt="Traumacore Webring Member"&gt;
+&lt;/a&gt;</code></pre>
+          </details>
+        </div>
+      </section>
+
+      <!-- Join Section -->
+      <section id="join" class="join-section">
+        <h2 style="color: rgb(176, 126, 150)">Join a Webring</h2>
+        <p style="color: rgb(51, 51, 51)">Submit your site after reading over the guidelines.</p>
+
+        <form name="member-submission" method="POST" data-netlify="true" id="submission-form">
+          <input type="hidden" name="form-name" value="member-submission" />
+
+          <div class="form-group">
+            <label style="color: rgb(176, 126, 150)" for="site-name">Site Name *</label>
+            <input type="text" id="site-name" name="site-name" required />
+          </div>
+
+          <div class="form-group">
+            <label style="color: rgb(176, 126, 150)" for="site-url">Site URL *</label>
+            <input type="url" id="site-url" name="site-url" required placeholder="https://mysite.com" />
+          </div>
+
+          <div class="form-group">
+            <label style="color: rgb(176, 126, 150)" for="site-description">Brief Description (optional)</label>
+            <textarea
+              id="site-description"
+              name="site-description"
+              rows="3"
+              placeholder="What does your site feature?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend>Which Webring(s)? *</legend>
+
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="webring-morute" name="webring" value="morute" />
+                  <label style="color: rgb(176, 126, 150)" for="webring-morute">Morute</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="webring-traumacore" name="webring" value="traumacore" />
+                  <label style="color: rgb(176, 126, 150)" for="webring-traumacore">Traumacore</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <label style="color: rgb(176, 126, 150)" for="email">Email for Confirmation *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" id="agreement-checkbox" name="agreement" value="yes" required />
+            <label for="agreement-checkbox">
+              I have read and agree to the
+              <a href="guidelines.html" style="color: rgb(176, 126, 150)">Community Guidelines</a>
+            </label>
+          </div>
+
+          <!-- Hidden honeypot field for spam protection -->
+          <div style="display: none">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+
+        <div
+          id="form-success"
+          style="display: none; margin-top: 1.5rem; padding: 1rem; background: #e8f5e9; border-radius: 4px">
+          ✅ Thank you! We'll review your submission within 48 hours.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 Dove
+        <img
+          src="https://file.garden/Zpt04KL0r1V-kQd1/_old%20web/Blinkies%20and%20Similar/pixels/tumblr_fe39cca840848ce9af97e8730a1037b8_8f9bb46c_75.webp" />
+        sickseeds | <a style="color: rgb(176, 126, 150)" href="/guidelines.html">Community Guidelines</a>
+      </p>
+    </footer>
+  </body>
+</html>
+<script>
+  // Auto-generate domain-aware embed codes
+  document.addEventListener("DOMContentLoaded", () => {
+    const protocol = window.location.protocol;
+    const domain = window.location.host;
+    const fullDomain = `${protocol}//${domain}`;
+
+    // Update Morute code block
+    const moruteCode = document.getElementById("morute-code");
+    if (moruteCode) {
+      moruteCode.innerHTML = `&lt;a href="${fullDomain}/morute.html"&gt;\n  &lt;img src="${fullDomain}/assets/badges/morute-1.gif" \n       alt="Morute Webring Member" width="88" height="31"&gt;\n&lt;/a&gt;`;
+    }
+
+    // Update Traumacore code block
+    const traumacoreCode = document.getElementById("traumacore-code");
+    if (traumacoreCode) {
+      traumacoreCode.innerHTML = `&lt;a href="${fullDomain}/traumacore.html"&gt;\n  &lt;img src="${fullDomain}/assets/badges/traumacore-1.gif" \n       alt="Traumacore Webring Member" width="88" height="31"&gt;\n&lt;/a&gt;`;
+    }
+  });
+</script>
+<script>
+  const canvas = document.getElementById("rainCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Resize canvas to fill window perfectly
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  // Raindrop configuration
+  const maxDrops = 150;
+  const drops = [];
+
+  for (let i = 0; i < maxDrops; i++) {
+    drops.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      length: Math.random() * 20 + 10, // Length of rain streak
+      speed: Math.random() * 4 + 6 // Falling speed
+    });
+  }
+
+  // Animation Loop
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.45)"; // Semi-transparent white
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = "round";
+
+    for (let i = 0; i < maxDrops; i++) {
+      let d = drops[i];
+      ctx.beginPath();
+      ctx.moveTo(d.x, d.y);
+      ctx.lineTo(d.x, d.y + d.length);
+      ctx.stroke();
+      d.y += d.speed;
+
+      if (d.y > canvas.height) {
+        d.y = -d.length;
+        d.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>

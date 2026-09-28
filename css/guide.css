@@ -1,0 +1,127 @@
+/* guidelines.css additions */
+.guidelines-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #b07e96 0%, #6e3c52 100%);
+  color: white;
+  animation: breatheGlow 4s ease-in-out infinite;
+}
+@keyframes breatheGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px 5px rgb(161, 113, 134);
+    text-shadow: 0 0 20px 5px rgb(161, 113, 134);
+    transform: scale(1);
+  }
+  50%{
+    box-shadow: 0 0 20px 5px rgb(161, 113, 134);
+    text-shadow: 0 0 20px 5px rgb(161, 113, 134);
+    transform: scale(1.015);
+  }
+}
+
+.general-rules,
+.aesthetic-specific,
+.appeals,
+.acceptance {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+    text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.rule-card,
+.guideline-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #b07e96;
+}
+
+.rule-card.warning {
+  border-left-color: #ff071f;
+  background: #ffcdce;
+  text-shadow: 0 0 10px #bd829c,
+             0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.guideline-card.special {
+  border-left-color: #e91e63;
+  position: relative;
+}
+
+.warning-box {
+  background: #fce4ec;
+  border: 1px solid #f48fb1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.warning-box h4 {
+  color: #c2185b;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.guideline-card h3,
+.rule-card h3 {
+  color: #b07e96;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.guideline-card h4 {
+  color: #555;
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.guideline-card ul,
+.rule-card ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #666;
+}
+
+.guideline-card li,
+.rule-card li {
+  margin: 0.5rem 0;
+}
+
+.acceptance {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background: #b07e96;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #b07e96;
+}
+#rainCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(to bottom, #614655 0%, #766870 40%, #D9B3C2 85%, #E5CAD6 100%);
+}

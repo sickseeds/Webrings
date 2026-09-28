@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morute Webring | Aesthetic Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <canvas id="rainCanvas"></canvas>
+  <nav class="main-nav">
+    <ul class="tab-list">
+      <li><a href="index.html" class="tab">Home</a></li>
+      <li><a href="morute.html" class="tab active">Morute Webring</a></li>
+      <li><a href="traumacore.html" class="tab">Traumacore Webring</a></li>
+      <li><a href="index.html#join" class="tab">Join</a></li>
+    </ul>
+  </nav>
+
+  <main class="webring-page">
+    <header style="background-color: rgba(255, 255, 255, 0);" class="webring-header">
+      <h1 style="color: rgb(252, 228, 236); font-family: AdorableDoll; background-color: rgba(252, 228, 236, 0);">Morute Webring</h1>
+      <p style="color: rgb(141, 125, 133); font-family: RomanceA;">Circles of sites embracing the morbid/cute aesthetic.</p>
+      <div style="color: rgb(50, 11, 30); font-family: RomanceA; background-color: rgba(255, 205, 206, 0.52);" class="content-warning">
+        <img src="https://file.garden/Zpt04KL0r1V-kQd1/_old%20web/Blinkies%20and%20Similar/pixels/tumblr_c6a8bec39ee8ac288c3f7cfdcaec6e79_b88cacf1_75.webp"> Some linked sites may contain sensitive themes.
+      </div>
+    </header>
+
+    <!-- Circular Navigation Bar -->
+    <nav style="background-color: rgba(176, 126, 150, 0);" class="webring-nav" id="webring-nav">
+      <a style="color: #fce4ec; font-family: RomanceA;" href="#" class="nav-btn prev"><span aria-hidden="true">◀</span> Previous</a>
+      <a style="color: #fce4ec; font-family: RomanceA;" href="#" class="nav-btn home" onclick="showMemberInfo(event)">🏠 Center</a>
+      <a style="color: #fce4ec; font-family: RomanceA;" href="#" class="nav-btn random">🎲 Random</a>
+      <a style="color: #fce4ec; font-family: RomanceA;" href="#" class="nav-btn next">Next <span aria-hidden="true">▶</span></a>
+    </nav>
+
+    <!-- Current Member Display -->
+    <section style="background-color: rgba(86, 69, 80, 0.5);" class="current-member" id="current-member-display">
+      <!-- Populated by JS -->
+    </section>
+
+    <!-- Full Member List -->
+    <section class="member-directory">
+      <h2 style="color: rgb(86, 69, 80); font-family: AdorableDoll;">All Members (<span id="member-count">0</span>)</h2>
+      <ul class="member-grid" id="member-list">
+        <!-- Populated by JS -->
+      </ul>
+    </section>
+  </main>
+
+  <script src="data/members.json"></script>
+  <script src="js/webring.js"></script>
+  <script>
+  const canvas = document.getElementById('rainCanvas');
+  const ctx = canvas.getContext('2d');
+
+  // Resize canvas to fill window perfectly
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // Raindrop configuration
+  const maxDrops = 150;
+  const drops = [];
+
+  for (let i = 0; i < maxDrops; i++) {
+    drops.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      length: Math.random() * 20 + 10, // Length of rain streak
+      speed: Math.random() * 4 + 6     // Falling speed
+    });
+  }
+
+  // Animation Loop
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)'; // Semi-transparent white
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = 'round';
+
+    for (let i = 0; i < maxDrops; i++) {
+      let d = drops[i];
+      ctx.beginPath();
+      ctx.moveTo(d.x, d.y);
+      ctx.lineTo(d.x, d.y + d.length);
+      ctx.stroke();
+      d.y += d.speed;
+
+      if (d.y > canvas.height) {
+        d.y = -d.length;
+        d.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+</body>
+</html>

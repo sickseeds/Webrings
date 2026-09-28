@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "AdorableDoll";
+    src: url("fonts/AdorableDoll.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "RomanceA";
+    src: url("fonts/RomanceA.ttf") format("truetype");
+    font-display: swap;
+}
