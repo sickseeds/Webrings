@@ -35,7 +35,7 @@ body {
 
 /* Tab Navigation */
 .main-nav {
-  background: #301623;
+  background: rgba(48, 22, 35, 0.49);
   border-bottom: 1px solid #000000;
   position: sticky;
   top: 0;
