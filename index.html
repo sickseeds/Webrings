@@ -22,36 +22,50 @@
       <!-- Hero Section -->
       <section class="hero">
         <h1>Morbid Survivors</h1>
-        <p>A shared space for Morute & Traumacore communities to connect.</p>
       </section>
 
       <!-- Badge Showcase -->
       <section class="badge-showcase">
-        <div class="badge-card">
-          <h2>Morute</h2>
-          <img src="badges/button1.gif" />
-          <img src="badges/button2.gif" />
-          <details class="code-toggle">
-            <summary>copy code here</summary>
-            <pre><code id="morute-code">&lt;a href="https://yourdomain.com/morute.html"&gt;
+  <div class="badge-card">
+    <h2>Morute</h2>
+    <img src="badges/button1.gif" />
+    <img src="badges/button2.gif" />
+
+    <!-- REPLACED: Old <details> → New toggle structure -->
+    <div class="code-toggle">
+      <div class="toggle-header" onclick="toggleCode(this)">
+        <span>copy code here</span>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="toggle-content">
+        <pre><code id="morute-code">&lt;a href="https://yourdomain.com/morute.html"&gt;
   &lt;img src="https://yourdomain.com/badges/button1.gif"
        alt="Morute Webring Member"&gt;
 &lt;/a&gt;</code></pre>
-          </details>
-        </div>
-        <div class="badge-card">
-          <h2>Traumacore</h2>
-          <img src="badges/button3.gif" />
-          <img src="badges/button4.gif" />
-          <details class="code-toggle">
-            <summary>copy code here</summary>
-            <pre><code id="traumacore-code">&lt;a href="https://yourdomain.com/traumacore.html"&gt;
+      </div>
+    </div>
+  </div>
+
+  <div class="badge-card">
+    <h2>Traumacore</h2>
+    <img src="badges/button3.gif" />
+    <img src="badges/button4.gif" />
+
+    <!-- Same replacement for second card -->
+    <div class="code-toggle">
+      <div class="toggle-header" onclick="toggleCode(this)">
+        <span>copy code here</span>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="toggle-content">
+        <pre><code id="traumacore-code">&lt;a href="https://yourdomain.com/traumacore.html"&gt;
   &lt;img src="https://yourdomain.com/badges/button3.gif"
        alt="Traumacore Webring Member"&gt;
 &lt;/a&gt;</code></pre>
-          </details>
-        </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- Join Section -->
       <section id="join" class="join-section">
@@ -126,6 +140,7 @@
         </div>
       </section>
     </main>
+    <img id="pagedoll" src="https://file.garden/Zpt04KL0r1V-kQd1/decos/Pink_Rosary_BY_NEIRKHVGEN_NF2U.gif">
 
     <footer>
       <p>
@@ -147,13 +162,13 @@
     // Update Morute code block
     const moruteCode = document.getElementById("morute-code");
     if (moruteCode) {
-      moruteCode.innerHTML = `&lt;a href="${fullDomain}/morute.html"&gt;\n  &lt;img src="${fullDomain}/assets/badges/morute-1.gif" \n       alt="Morute Webring Member" width="88" height="31"&gt;\n&lt;/a&gt;`;
+      moruteCode.innerHTML = `&lt;a href="${fullDomain}/morute.html"&gt;\n  &lt;img src="${fullDomain}/assets/badges/button1.gif" \n       alt="Morute Webring Member" width="88" height="31"&gt;\n&lt;/a&gt;`;
     }
 
     // Update Traumacore code block
     const traumacoreCode = document.getElementById("traumacore-code");
     if (traumacoreCode) {
-      traumacoreCode.innerHTML = `&lt;a href="${fullDomain}/traumacore.html"&gt;\n  &lt;img src="${fullDomain}/assets/badges/traumacore-1.gif" \n       alt="Traumacore Webring Member" width="88" height="31"&gt;\n&lt;/a&gt;`;
+      traumacoreCode.innerHTML = `&lt;a href="${fullDomain}/traumacore.html"&gt;\n  &lt;img src="${fullDomain}/assets/badges/button3.gif" \n       alt="Traumacore Webring Member" width="88" height="31"&gt;\n&lt;/a&gt;`;
     }
   });
 </script>
@@ -207,4 +222,11 @@
   }
 
   draw();
+</script>
+<script>
+function toggleCode(header) {
+  header.classList.toggle('active');
+  const content = header.nextElementSibling;
+  content.classList.toggle('open');
+}
 </script>

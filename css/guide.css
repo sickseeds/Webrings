@@ -1,9 +1,15 @@
 /* guidelines.css additions */
 .guidelines-header {
   text-align: center;
-  padding: 3rem 1rem;
+  margin: 20px;
+  position: relative;
+  left: 40%;
+  width: 230px;
+  padding: 35px;
+  border-radius: 85px;
+  transform: skewX(-20deg);
   background: linear-gradient(135deg, #b07e96 0%, #6e3c52 100%);
-  color: white;
+  color: #fce4ec;
   animation: breatheGlow 4s ease-in-out infinite;
 }
 @keyframes breatheGlow {
@@ -124,4 +130,10 @@
   height: 100vh;
   z-index: -1;
   background: linear-gradient(to bottom, #614655 0%, #766870 40%, #D9B3C2 85%, #E5CAD6 100%);
+}
+#pagedoll {
+  position: fixed;
+  right:10px;
+  bottom:10px;
+  z-index: 100;
 }
