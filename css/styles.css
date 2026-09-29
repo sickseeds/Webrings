@@ -260,7 +260,7 @@ body {
 .nav-btn {
   padding: 0.75rem 1.5rem;
   background: rgba(255,255,255,0.15);
-  color: #ffffff;
+  color: #fce4ec;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
@@ -275,7 +275,7 @@ body {
 .current-member {
   text-align: center;
   padding: 3rem;
-  background: white;
+  background: rgba(252, 228, 236, 0.5);
   margin: 2rem auto;
   max-width: 800px;
   border-radius: 8px;
