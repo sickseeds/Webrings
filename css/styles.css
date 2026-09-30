@@ -235,6 +235,8 @@ body {
   text-align: center;
   padding: 3rem 1rem;
   background: #fff;
+      text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .content-warning {
@@ -253,6 +255,8 @@ body {
   gap: 1rem;
   padding: 1.5rem;
   background: #b07e96;
+      text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
   color: white;
   flex-wrap: wrap;
 }
@@ -262,6 +266,8 @@ body {
   background: rgba(255,255,255,0.15);
   color: #fce4ec;
   text-decoration: none;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
   border-radius: 4px;
   font-weight: 600;
   transition: background 0.2s;
@@ -273,9 +279,13 @@ body {
 
 /* Current Member Display */
 .current-member {
+  font-family: 'AdorableDoll', sans-serif;
   text-align: center;
   padding: 3rem;
-  background: rgba(252, 228, 236, 0.5);
+  background: rgba(110, 60, 82, 0.54);
+  color:#fce4ec;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
   margin: 2rem auto;
   max-width: 800px;
   border-radius: 8px;
@@ -287,7 +297,9 @@ body {
 }
 
 .current-member p {
-  color: #666;
+  color: #b07e96;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
   margin-bottom: 1.5rem;
 }
 
@@ -296,15 +308,20 @@ body {
   padding: 1rem 2rem;
   background: #b07e96;
   color: white;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
   text-decoration: none;
   border-radius: 4px;
 }
 
 /* Member Directory */
 .member-directory {
+  font-family: 'RomanceA', sans-serif;
   max-width: 1000px;
   margin: 2rem auto;
   padding: 2rem;
+  text-shadow: 0 0 10px #6e3c52,
+             0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .member-grid {
@@ -315,9 +332,9 @@ body {
 }
 
 .member-item {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 25px;
   box-shadow: 0 2px 4px rgb(161, 113, 134);
   text-align: center;
 }
