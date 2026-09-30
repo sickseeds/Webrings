@@ -9,7 +9,7 @@ function getCurrentWebring() {
 
 function getMembersList() {
   const webring = getCurrentWebring();
-  return allMembers[webring] || [];
+  return allMembers[webring]?.filter(m => m.approved === true) || [];
 }
 
 function getIndexFromURL() {
@@ -52,6 +52,8 @@ function renderMemberDirectory(members) {
   list.innerHTML = members.map((m, i) => `
     <li class="member-item">
       <strong>${escapeHTML(m.name)}</strong>
+      <br>
+      <span style="font-size:0.9em;color:#666">${escapeHTML(m.description || '')}</span>
       <br>
       <a href="${escapeAttr(m.url)}" target="_blank">Visit →</a>
     </li>
@@ -114,7 +116,7 @@ function showMemberInfo(e) {
 }
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('membersLoaded', () => {
   const members = getMembersList();
   renderMemberDirectory(members);
   loadMemberAtIndex(getIndexFromURL());
