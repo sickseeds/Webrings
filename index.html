@@ -71,7 +71,14 @@
         <h2 style="color: rgb(176, 126, 150)">Join a Webring</h2>
         <p style="color: rgb(51, 51, 51)">Submit your site after reading over the guidelines.</p>
 
-        <form name="member-submission" method="POST" data-netlify="true" id="submission-form">
+                <form
+          name="member-submission"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          action="/success.html"
+          id="submission-form"
+        >
           <input type="hidden" name="form-name" value="member-submission" />
 
           <div class="form-group">
@@ -112,7 +119,6 @@
           </div>
 
           <div class="form-group">
-
             <label style="color: rgb(176, 126, 150)" for="email">Email for Confirmation *</label>
             <input type="email" id="email" name="email" required />
           </div>
@@ -129,9 +135,9 @@
           <div style="display: none">
             <label>Don't fill this out: <input name="bot-field" /></label>
           </div>
+
           <button type="submit" class="submit-btn">Submit Request</button>
         </form>
-
         <div
           id="form-success"
           style="display: none; margin-top: 1.5rem; padding: 1rem; background: #e8f5e9; border-radius: 4px">

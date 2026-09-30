@@ -1,0 +1,74 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success | Morbid Survivors</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="rainCanvas"></canvas>
+  <section class="hero">
+  <h1>Thank you!</h1>
+    </section>
+  <section class="badge-showcase">
+  <div class="badge-card">
+  <p>We've received your submission and will review it within 48 hours.</p>
+  <a style="color: rgb(176, 126, 150)" href="index.html">Return</a>
+    </div>
+    </section>
+</body>
+</html>
+<script>
+  const canvas = document.getElementById("rainCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Resize canvas to fill window perfectly
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  // Raindrop configuration
+  const maxDrops = 150;
+  const drops = [];
+
+  for (let i = 0; i < maxDrops; i++) {
+    drops.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      length: Math.random() * 20 + 10, // Length of rain streak
+      speed: Math.random() * 4 + 6 // Falling speed
+    });
+  }
+
+  // Animation Loop
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.45)"; // Semi-transparent white
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = "round";
+
+    for (let i = 0; i < maxDrops; i++) {
+      let d = drops[i];
+      ctx.beginPath();
+      ctx.moveTo(d.x, d.y);
+      ctx.lineTo(d.x, d.y + d.length);
+      ctx.stroke();
+      d.y += d.speed;
+
+      if (d.y > canvas.height) {
+        d.y = -d.length;
+        d.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
