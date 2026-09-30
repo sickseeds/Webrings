@@ -1,0 +1,30 @@
+{
+  "morute": [
+    {
+      "name": "Dove",
+      "url": "https://sickseeds.netlify.app",
+      "description": "Something's not right with the world. . .",
+      "approved": true
+    },
+    {
+      "name": "Heavensent",
+      "url": "https://heavensent.cc/",
+      "description": "Sent from Heaven; Eden's disgrace ✧✧✧ Artwork, writing, characters and personal items hidden in the soul.",
+      "approved": true
+    }
+  ],
+  "traumacore": [
+    {
+      "name": "Dove",
+      "url": "https://sickseeds.netlify.app",
+      "description": "Something's not right with the world. . .",
+      "approved": true
+    },
+    {
+      "name": "Heavensent",
+      "url": "https://heavensent.cc/",
+      "description": "Sent from Heaven; Eden's disgrace ✧✧✧ Artwork, writing, characters and personal items hidden in the soul.",
+      "approved": true
+    }
+  ]
+}
