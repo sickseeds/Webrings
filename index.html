@@ -155,24 +155,23 @@
         sickseeds | <a style="color: rgb(176, 126, 150)" href="/guidelines.html">Community Guidelines</a>
       </p>
     </footer>
-    <script>
-let allMembers = [];
-fetch('/members.json')
-  .then(res => res.json())
-  .then(data => {
-    allMembers = data;
-    // Now trigger initialization
-    document.dispatchEvent(new Event('membersLoaded'));
-  })
-  .catch(err => {
+   <script>
+async function loadMembers() {
+  try {
+    const res = await fetch('/members.json');
+    allMembers = await res.json();
+    console.log('Members loaded:', allMembers);
+  } catch (err) {
     console.error("Failed to load members.json:", err);
-    allMembers = [];
+  } finally {
     document.dispatchEvent(new Event('membersLoaded'));
-  });
-</script>
+  }
+}
 
-<script src="js/submissions.js"></script>
-<script src="js/webring.js"></script>
+loadMembers();
+</script>
+  <script src="js/webring.js"></script>
+  <script src="js/submissions.js"></script>
   </body>
 </html>
 <script>

@@ -47,9 +47,23 @@
       </ul>
     </section>
   </main>
+<script>
+async function loadMembers() {
+  try {
+    const res = await fetch('/members.json');
+    allMembers = await res.json();
+    console.log('Members loaded:', allMembers);
+  } catch (err) {
+    console.error("Failed to load members.json:", err);
+  } finally {
+    document.dispatchEvent(new Event('membersLoaded'));
+  }
+}
 
-  <script src="members.json"></script>
+loadMembers();
+</script>
   <script src="js/webring.js"></script>
+  <script src="js/submissions.js"></script>
   <script>
   const canvas = document.getElementById('rainCanvas');
   const ctx = canvas.getContext('2d');
